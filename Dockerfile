@@ -8,6 +8,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localyime && echo $TZ > /etc/timezone
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 
 # Set kubectl
-RUN apt install -y bash curl jq
+RUN apt install -y bash curl jq wget vim
 
 CMD bash

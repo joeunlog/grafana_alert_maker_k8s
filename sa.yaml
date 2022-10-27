@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app: kubectl
+  name: kubectl-sa
+  namespace: monitor
+automountServiceAccountToken: false
