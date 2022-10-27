@@ -2,8 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
-    app: kubectl
-  name: kubectl-clusterrole
+    app: alertmaker
+  name: alertmaker-clusterrole
 rules:
   - apiGroups:
       - ""

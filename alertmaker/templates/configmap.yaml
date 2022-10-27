@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   labels:
-    app: kubectl
+    app: alertmaker
   name: grafana-alert-maker
   namespace: monitor
 data:
@@ -10,16 +10,16 @@ data:
     {
       "datasource-name": "Prometheus"
     }
-  notichannel.json: |
-    {
-        "uid": "new-alert-notification2",
-        "name": "new alert notification2",
-        "type": "slack",
-        "isDefault": false,
-        "sendReminder": false,
-        "settings": {
-          "url": "",
-          "recipient": "#grafana_alert_joeun",
-          "token": ""
-        }
-      }
+  # notichannel.json: |
+  #   {
+  #       "uid": "new-alert-notification2",
+  #       "name": "new alert notification2",
+  #       "type": "slack",
+  #       "isDefault": false,
+  #       "sendReminder": false,
+  #       "settings": {
+  #         "url": "",
+  #         "recipient": "#grafana_alert_joeun",
+  #         "token": ""
+  #       }
+  #     }

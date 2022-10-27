@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test
+  name: alertmaker
 spec:
   replicas: 1
   selector:
     matchLabels:
-      role: kubectl
+      app: alertmaker
   template:
     metadata:
       labels:
-        role: kubectl
+        app: alertmaker
     spec:
-      serviceAccountName: kubectl-sa
+      serviceAccountName: alertmaker-sa
       automountServiceAccountToken: true
       containers:
       - image: dmsqlczzz/grafana_alert_maker_k8s:main
-        name: kubelet
+        name: alertmaker
+        imagePullPolicy: Always
         tty: true
         securityContext:
           privileged: true
