@@ -22,6 +22,6 @@ COPY ./gettoken.sh .
 RUN chmod 777 ./gettoken.sh
 # RUN /tmp/gettoken.sh
 
-RUN /tmp/gettoken.sh
+RUN /alertmaker/gettoken.sh
 
 CMD bash
