@@ -18,10 +18,12 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
 RUN mv kubectl /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
 
-COPY ./gettoken.sh .
+COPY ./gettoken.sh ./gettoken.sh
 RUN chmod 777 ./gettoken.sh
 # RUN /tmp/gettoken.sh
 
-RUN /alertmaker/gettoken.sh
+# RUN /alertmaker/gettoken.sh
 
-CMD bash
+# CMD bash
+
+CMD /alertmaker/gettoken.sh
