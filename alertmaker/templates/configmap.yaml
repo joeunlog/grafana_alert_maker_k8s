@@ -18,8 +18,8 @@ data:
         "isDefault": false,
         "sendReminder": false,
         "settings": {
-          "url": "https://hooks.slack.com/services/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",
+          "url": "",
           "recipient": "#grafana_alert_joeun",
-          "token": "xoxb-3390299311522-3421117710307-6xOMKlU92vOREwB1wfZtXemD"
+          "token": ""
         }
       }
