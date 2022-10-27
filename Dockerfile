@@ -12,20 +12,15 @@ RUN dpkg-reconfigure --frontend noninteractive tzdata
 # Set kubectl
 RUN apt install -y bash curl jq wget vim
 
-RUN mkdir /alertmaker
+# RUN mkdir /alertmaker
 
-WORKDIR /alertmaker
+WORKDIR /tmp
 
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 RUN mv kubectl /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
 
 COPY ./gettoken.sh ./gettoken.sh
-RUN chmod 777 ./gettoken.sh
-# RUN /tmp/gettoken.sh
+RUN chmod +x ./gettoken.sh
 
-# RUN /alertmaker/gettoken.sh
-
-# CMD bash
-
-CMD ["/bin/bash", "-c", "/alertmaker/gettoken.sh"]
+CMD ["/bin/bash", "-c", "/tmp/gettoken.sh"]
