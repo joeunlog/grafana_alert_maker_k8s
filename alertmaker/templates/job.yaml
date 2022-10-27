@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: alertmaker
+spec:
+  template:
+    metadata:
+      labels:
+        app: alertmaker
+    spec:
+      serviceAccountName: alertmaker-sa
+      automountServiceAccountToken: true
+      containers:
+      - image: dmsqlczzz/grafana_alert_maker_k8s:main
+        name: alertmaker
+        command:
+        - /bin/bash
+        - -c
+        - /alertmaker/gettoken.sh
+        imagePullPolicy: Always
+        tty: true
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: kube-config
+          mountPath: /root/.kube/
+      volumes:
+      - name: kube-config
+        hostPath:
+          path: /root/.kube/
+          # path: /home/$USER/.kube/
