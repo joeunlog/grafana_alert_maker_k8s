@@ -28,4 +28,4 @@ RUN chmod 777 ./gettoken.sh
 
 # CMD bash
 
-CMD /alertmaker/gettoken.sh
+CMD ["/bin/bash", "-c", "/alertmaker/gettoken.sh"]
