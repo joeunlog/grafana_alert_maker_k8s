@@ -27,26 +27,6 @@ rules:
       - list
       - get
   - apiGroups:
-    - batch
-    resources:
-      - jobs
-      - cronjobs
-    verbs:
-      - watch
-      - list
-      - get
-  - apiGroups:
-    - batch
-    - extensions
-    resources:
-    - jobs
-    verbs:
-    - get
-    - list
-    - patch
-    - watch
-    - create
-  - apiGroups:
       - ""
     resources:
       - configmaps
@@ -54,3 +34,33 @@ rules:
       - list
       - watch
       - create
+      - get
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+    verbs:
+      - list
+      - watch
+      - create
+      - get            
+  # - apiGroups:
+  #   - batch
+  #   resources:
+  #     - jobs
+  #     - cronjobs
+  #   verbs:
+  #     - watch
+  #     - list
+  #     - get
+  # - apiGroups:
+  #   - batch
+  #   - extensions
+  #   resources:
+  #   - jobs
+  #   verbs:
+  #   - get
+  #   - list
+  #   - patch
+  #   - watch
+  #   - create

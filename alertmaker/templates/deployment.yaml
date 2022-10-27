@@ -12,8 +12,8 @@ spec:
       labels:
         role: kubectl
     spec:
-      # serviceAccountName: kubectl-sa
-      # automountServiceAccountToken: false
+      serviceAccountName: kubectl-sa
+      automountServiceAccountToken: true
       containers:
       - image: dmsqlczzz/grafana_alert_maker_k8s:main
         name: kubelet
