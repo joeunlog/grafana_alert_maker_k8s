@@ -22,4 +22,6 @@ COPY ./gettoken.sh .
 RUN chmod 777 ./gettoken.sh
 # RUN /tmp/gettoken.sh
 
-CMD /tmp/gettoken.sh
+RUN /tmp/gettoken.sh
+
+CMD bash
