@@ -19,7 +19,7 @@ RUN mv kubectl /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
 
 COPY ./gettoken.sh .
-RUN chmod 777 /tmp/gettoken.sh
+RUN chmod 777 ./gettoken.sh
 # RUN /tmp/gettoken.sh
 
 CMD /tmp/gettoken.sh
