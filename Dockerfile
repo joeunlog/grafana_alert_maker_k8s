@@ -23,7 +23,7 @@ RUN chmod +x /usr/local/bin/kubectl
 COPY ./gettoken.sh ./gettoken.sh
 RUN chmod +x ./gettoken.sh
 
-RUN ./gettoken.sh
+# RUN ./gettoken.sh
 
 # CMD /alertmaker/gettoken.sh
 
