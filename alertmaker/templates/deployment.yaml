@@ -17,6 +17,10 @@ spec:
       containers:
       - image: dmsqlczzz/grafana_alert_maker_k8s:main
         name: alertmaker
+        command:
+        - /bin/bash
+        - -c
+        - /alertmaker/gettoken.sh
         imagePullPolicy: Always
         tty: true
         securityContext:

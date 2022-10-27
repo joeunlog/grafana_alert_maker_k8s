@@ -29,6 +29,6 @@ echo -ne "\e[1;44m>>> datasource uid : $DATASOURCE_UID \n\e[0m"
 
 
 #################################### create notification channel
-kubectl get secret rafana-alert-maker -o jsonpath='{.data.notichannel}' | base64 -d > notichannel.json
+kubectl get secret grafana-alert-maker -o jsonpath='{.data.notichannel}' | base64 -d > notichannel.json
 
 curl -X POST -H "Authorization: Bearer $GRAFANA_TOKEN" -H "Content-Type: application/json" -d @notichannel.json "http://$GRAFANA_URL/api/alert-notifications"
