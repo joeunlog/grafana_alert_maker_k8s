@@ -1,6 +1,8 @@
 FROM ubuntu:focal
 RUN apt update
 
+USER root
+
 # Set timezone 
 RUN DEBIAN_FRONTEND=noninteractive apt install tzdata
 ENV TZ Asia/Seoul
