@@ -16,7 +16,7 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
 RUN mv kubectl /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
 
-ADD gettoken.sh /tmp/gettoken.sh
+COPY ./gettoken.sh /tmp/gettoken.sh
 RUN chmod 700 /tmp/gettoken.sh
 # RUN /tmp/gettoken.sh
 
